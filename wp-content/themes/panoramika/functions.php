@@ -14,6 +14,7 @@ if ( ! function_exists( 'panoramika_setup' ) ) :
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
+
 	 */
 	function panoramika_setup() {
 		/*
@@ -120,7 +121,34 @@ add_action( 'widgets_init', 'panoramika_widgets_init' );
  * Enqueue scripts and styles.
  */
 function panoramika_scripts() {
+	
+	
+
 	wp_enqueue_style( 'panoramika-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'panoramika-fonts', 'https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500' );
+
+	wp_enqueue_style( 'panoramika-icons', 'https://file.myfontastic.com/fK6jh87zMkBhSWq5nquEDd/icons.css' );
+
+	wp_enqueue_style( 'normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', array(), $ver = false, $media = 'all' );
+
+	wp_enqueue_style( 'panoramika-normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', array(), $ver = false, $media = 'all' );
+
+	wp_enqueue_style( 'panoramika-owl', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), $ver = false, $media = 'all' );
+
+	wp_enqueue_style( 'panoramika-owl-theme', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), $ver = false, $media = 'all' );
+
+	wp_enqueue_script( 'jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css', array('jquery'), '20151215', true );
+
+	wp_enqueue_script( 'owl-carrousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '20151215', true );
+
+	wp_enqueue_script( 'carrusel', get_template_directory_uri() . '/js/carrusel.js', array('jquery'), '20151215', true );
+
+	wp_enqueue_script( 'video', get_template_directory_uri() . '/js/video.js', array('jquery'), '20151215', true );
+
+
+
+
 
 	wp_enqueue_script( 'panoramika-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
